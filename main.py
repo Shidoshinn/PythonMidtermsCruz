@@ -36,5 +36,27 @@ def sale_record():
     except ValueError:
         print('Enter a numerical value')
 
+    except OSError:
+        print('File save error')
+
+
+
+
+
+
+def view_records():
+    print('---SALES RECORD---')
+    total_units = 0
+    total_revenue = 0
+    records = False
+
+    try:
+        with open(file_name, 'r') as file:
+            for line in file:
+                line = line.strip()
+
+            if line == '':
+                continue
+
 
 
